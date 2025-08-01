@@ -1,6 +1,9 @@
 from flask import Flask
+from flask_wtf import CSRFProtect
 
 app = Flask(__name__)
+app.secret_key = 'password123'
+csrf = CSRFProtect(app)
 
 @app.route('/')
 def home():
